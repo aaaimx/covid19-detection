@@ -12,11 +12,14 @@
 </p>
 <!-- __ -->
 
-# Detección de coronavirus aplicando lógica difusa
+# A fuzzy inference system to detect COVID-19 symptoms
 <p style="text-align: justify;">La lógica difusa servirá para detectar patrones de probabilidades ante los síntomas que el usuario ingrese en un formulario. Se planea que al llenar un formulario con previos valores asignados, la lógica difusa encuentre si sus síntomas corresponden a alergias, resfriado, gripa o coronavirus, esto para reducir las visitas innecesarias a los hospitales y así evitar la saturación de estos mismos o el contagio del coronavirus, pues allí es donde se hospeda con mayor frecuencia y se tiene más riesgo de contagio. </p>
 
 ## Getting Started
 
+### Prerequisites 📋
+
+- Python 3.6>
 
 ### Project setup
 
@@ -56,8 +59,7 @@ Para ver los ejemplos en los que esta basado el proyecto puedes seguir estos enl
 
 ## Built With
 
-- [Python](https://www.python.org/) - the excellence language for AI
-
+- [skfuzzy](https://pythonhosted.org/scikit-fuzzy/) - This SciKit is a fuzzy logic toolbox for SciPy.
 
 
 ## Contribuitors ✒
