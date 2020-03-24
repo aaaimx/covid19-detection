@@ -12,5 +12,5 @@ Activate virtualenv
 
 Dependencies
 
-`pip install jupyter numpy scikit-fuzzy pandas matplotlib scipy scikit-learn seaborn`
+`pip install -r requirements.txt`
 
