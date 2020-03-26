@@ -1,3 +1,14 @@
+"""
+===============
+Eggs Boiling Example
+===============
+
+This is a simple example of Fuzzy enference system to determinate the boiling time of eggs given
+the size/weight.
+
+https://github.com/calidev/presentaciones/blob/master/Pyday_2018/Truth%20is%20always%20Strange%20-%20Fuzzy%20logic%20in%20Python/Truth%20is%20always%20strange.pdf
+"""
+
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
