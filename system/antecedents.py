@@ -41,7 +41,7 @@ Mi.automf(3, names=binary)
 Fa.automf(3, names=binary)
 CN.automf(3, names=binary)
 Es.automf(3, names=binary)
-DG.automf(3, names=['No', 'Leve', 'Severo'])
+DG.automf(5, names=['No', 'Leve', 'Severo', '~No', 'X'])
 DR.automf(3, names=binary)
 Ri.automf(3, names=binary)
 
@@ -80,9 +80,11 @@ Es['No'] = no_sigmoid
 Es['~No'] = 1 - no_sigmoid
 
 # Dolor de garganta
-Fi['No'] = fuzz.sigmf(Fi.universe, -30, 0.3)
+no_sigmoid = fuzz.sigmf(Fi.universe, -30, 0.3)
+Fi['No'] = no_sigmoid
 Fi['Leve'] = fuzz.gbellmf(Fi.universe, 0.24, 3.3, 0.46)
 Fi['Severo'] = fuzz.sigmf(Fi.universe, 31.5, 0.67)
+Fi['~No'] = 1 - no_sigmoid
 
 # Diarrea
 no_sigmoid = fuzz.sigmf(DR.universe, -30, 0.3)
