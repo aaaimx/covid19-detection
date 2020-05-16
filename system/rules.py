@@ -7,13 +7,10 @@ from consequents import Co, Al, Re, In
 # -------------------------------------
 # Inference rules
 # -------------------------------------
-
-# TODO: redefine rules
-rule1 = ctrl.Rule(antecedent=(Fi['No'] & DG['No']), consequent=(Co['PP'] & Al['MP'] & Re['PP'] & In['PP']))
-rule2 = ctrl.Rule(antecedent=(Fi['poor'] & DG['average']), consequent=(Co['PP']))
-rule3 = ctrl.Rule(antecedent=(Fi['good'] & DR['poor'] & Mi['~No']), consequent=Co['PP'])
-rule4 = ctrl.Rule(antecedent=(Fi['good']), consequent=Co['MP'])
-rule5 = ctrl.Rule(antecedent=(Fi['average']), consequent=Co['PO'])
-rule6 = ctrl.Rule(antecedent=(Fi['poor'] & DG['good']), consequent=Co['PP'])
-
+rule1 = ctrl.Rule(antecedent=(Fi['No'] & DG['No']), consequent=(Co['PP'], Al['MP'], Re['PP'], In['PP']))
+rule2 = ctrl.Rule(antecedent=(Fi['No'] & DG['Leve']), consequent=(Co['PP'], Re['MP'], In['PP']))
+rule3 = ctrl.Rule(antecedent=(Fi['Alta'] & DC['~No'] & Mi['~No'] & Fa['~No'] & DR['No']), consequent=Re['MP'])
+rule4 = ctrl.Rule(antecedent=(Fi['Alta'] & DR['~No']), consequent=(Co['MP'], Al['PP'], Re['PP']))
+rule5 = ctrl.Rule(antecedent=(Fi['Leve'] & DR['~No']), consequent=Co['Pr'])
+rule6 = ctrl.Rule(antecedent=(Fi['Leve'] & CN['~No'] & Es['~No'] & DG['~No'] & DR['No'] & Ri['~No']), consequent=Co['Pr'])
 # TODO: rule7, rule9, rule10
