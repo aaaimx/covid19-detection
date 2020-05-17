@@ -10,15 +10,17 @@ from skfuzzy import control as ctrl
 # -------------------------------------
 # Symptoms Universe
 # -------------------------------------
+helper_array = np.arange(0, 1, 0.001)
+
 Fiebre = np.arange(36, 41, 0.001)
-DolorCabeza = np.arange(0, 1, 0.001)
-Mialgia = np.arange(0, 1, 0.001)
-Fatiga = np.arange(0, 1, 0.001)
-CongestionNasal = np.arange(0, 1, 0.001)
-Estornudos = np.arange(0, 1, 0.001)
-DolorGarganta = np.arange(0, 1, 0.001)
-Diarrea = np.arange(0, 1, 0.001)
-Rinorrea = np.arange(0, 1, 0.001)
+DolorCabeza = helper_array
+Mialgia = helper_array
+Fatiga = helper_array
+CongestionNasal = helper_array
+Estornudos = helper_array
+DolorGarganta = helper_array
+Diarrea = helper_array
+Rinorrea = helper_array
 
 # -------------------------------------
 # Inputs (antecedents)
