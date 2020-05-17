@@ -10,10 +10,10 @@ from skfuzzy import control as ctrl
 # -------------------------------------
 # Diagnosis Universe
 # -------------------------------------
-covid = np.arange(0, 10, 0.01)
-resfriado = np.arange(0, 10, 0.01)
-alergia = np.arange(0, 10, 0.01)
-influenza = np.arange(0, 10, 0.01)
+covid = np.arange(0, 1, 0.001)
+resfriado = np.arange(0, 1, 0.001)
+alergia = np.arange(0, 1, 0.001)
+influenza = np.arange(0, 1, 0.001)
 
 # -------------------------------------
 # Outputs (consequents)
@@ -24,7 +24,7 @@ Al = ctrl.Consequent(alergia, 'Al')
 In = ctrl.Consequent(influenza, 'In')
 
 # linguistic values
-diagno = ['PP', 'Po', 'Pr' 'MP', 'X']
+diagno = ['PP', 'Po', 'X', 'Pr' 'MP']
 Co.automf(5, names=diagno)
 Re.automf(5, names=diagno)
 Al.automf(5, names=diagno)
