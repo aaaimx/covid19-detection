@@ -13,4 +13,9 @@ rule3 = ctrl.Rule(antecedent=(Fi['Alta'] & DC['~No'] & Mi['~No'] & Fa['~No'] & D
 rule4 = ctrl.Rule(antecedent=(Fi['Alta'] & DR['~No']), consequent=(Co['MP'], Al['PP'], Re['PP']))
 rule5 = ctrl.Rule(antecedent=(Fi['Leve'] & DR['~No']), consequent=Co['Pr'])
 rule6 = ctrl.Rule(antecedent=(Fi['Leve'] & CN['~No'] & Es['~No'] & DG['~No'] & DR['No'] & Ri['~No']), consequent=Co['Pr'])
-# TODO: rule7, rule9, rule10
+rule7 = ctrl.Rule(antecedent=(Fi['~No'] & DC['~No'] & Mi['~No'] & Fa['~No'] & DR['~No']), consequent=(In['MP']))
+rule8 = ctrl.Rule(antecedent=(Fi['Leve'] & DR['No']), consequent=(Re['Pr'], In['Po']))
+rule9 = ctrl.Rule(antecedent=(Fi['Alta'] & DC['~No'] & Mi['~No'] & Fa['~No'] & DR['~No']), consequent=(Co['MP'], Al['PP'], Re['PP'], In['PP']))
+rule10 = ctrl.Rule(antecedent=(Fi['No'] & DG['Severo']), consequent=(Co['PP'], Al['PP'], Re['MP'], In['PP']))
+
+rules = (rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule8, rule9, rule10)
