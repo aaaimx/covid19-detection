@@ -3,3 +3,4 @@ COVID-Env
 env
 venv
 .vscode
+*.pyc
