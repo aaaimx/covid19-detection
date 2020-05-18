@@ -34,28 +34,33 @@ In.automf(5, names=diagno)
 # Generate fuzzy membership functions
 # -------------------------------------
 
+# --------------------------------------------------
+#  Lambda function to gbell & sigmoid memberships
+# --------------------------------------------------
+
+gbellmf = lambda universe, a, b, c: fuzz.gbellmf(universe, a, b, c)
+sigmf = lambda universe, a, b: fuzz.sigmf(universe, a, b)
+
 # Covid-19
-Co['PP'] = fuzz.sigmf(Co.universe, -50, 0.2)
-Co['Po'] = fuzz.gbellmf(Co.universe, 0.14, 2.5, 0.33)
-Co['Pr'] = fuzz.gbellmf(Co.universe, 0.14, 2.5, 0.66)
-Co['MP'] = fuzz.sigmf(Co.universe, 50, 0.8)
+Co['PP'] = sigmf(Co.universe, -50, 0.2)
+Co['Po'] = gbellmf(Co.universe, 0.14, 2.5, 0.33)
+Co['Pr'] = gbellmf(Co.universe, 0.14, 2.5, 0.66)
+Co['MP'] = sigmf(Co.universe, 50, 0.8)
 
 # Resfriado
-Re['PP'] = fuzz.sigmf(Re.universe, -50, 0.2)
-Re['Po'] = fuzz.gbellmf(Re.universe, 0.14, 2.5, 0.33)
-Re['Pr'] = fuzz.gbellmf(Re.universe, 0.14, 2.5, 0.66)
-Re['MP'] = fuzz.sigmf(Re.universe, 50, 0.8)
+Re['PP'] = sigmf(Re.universe, -50, 0.2)
+Re['Po'] = gbellmf(Re.universe, 0.14, 2.5, 0.33)
+Re['Pr'] = gbellmf(Re.universe, 0.14, 2.5, 0.66)
+Re['MP'] = sigmf(Re.universe, 50, 0.8)
 
 # Alergia
-Al['PP'] = fuzz.sigmf(Al.universe, -50, 0.2)
-Al['Po'] = fuzz.gbellmf(Al.universe, 0.14, 2.5, 0.33)
-Al['Pr'] = fuzz.gbellmf(Al.universe, 0.14, 2.5, 0.66)
-Al['MP'] = fuzz.sigmf(Al.universe, 50, 0.8)
+Al['PP'] = sigmf(Al.universe, -50, 0.2)
+Al['Po'] = gbellmf(Al.universe, 0.14, 2.5, 0.33)
+Al['Pr'] = gbellmf(Al.universe, 0.14, 2.5, 0.66)
+Al['MP'] = sigmf(Al.universe, 50, 0.8)
 
 # Influenza
-In['PP'] = fuzz.sigmf(In.universe, -50, 0.2)
-In['Po'] = fuzz.gbellmf(In.universe, 0.14, 2.5, 0.33)
-In['Pr'] = fuzz.gbellmf(In.universe, 0.14, 2.5, 0.66)
-In['MP'] = fuzz.sigmf(In.universe, 50, 0.8)
-
-# TODO: create lambda function to gbell & sigmoid memberships
+In['PP'] = sigmf(In.universe, -50, 0.2)
+In['Po'] = gbellmf(In.universe, 0.14, 2.5, 0.33)
+In['Pr'] = gbellmf(In.universe, 0.14, 2.5, 0.66)
+In['MP'] = sigmf(In.universe, 50, 0.8)
