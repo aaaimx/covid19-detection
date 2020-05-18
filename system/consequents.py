@@ -15,6 +15,7 @@ resfriado = np.arange(0, 1, 0.001)
 alergia = np.arange(0, 1, 0.001)
 influenza = np.arange(0, 1, 0.001)
 
+universe = np.arange(0, 1, 0.001)
 # -------------------------------------
 # Outputs (consequents)
 # -------------------------------------
@@ -34,28 +35,33 @@ In.automf(5, names=diagno)
 # Generate fuzzy membership functions
 # -------------------------------------
 
+# --------------------------------------------------
+#  Lambda function to gbell & sigmoid memberships
+# --------------------------------------------------
+
+gbellmf = lambda a, b, c: fuzz.gbellmf(universe, a, b, c)
+sigmf = lambda a, b: fuzz.sigmf(universe, a, b)
+
 # Covid-19
-Co['PP'] = fuzz.sigmf(Co.universe, -50, 0.2)
-Co['Po'] = fuzz.gbellmf(Co.universe, 0.14, 2.5, 0.33)
-Co['Pr'] = fuzz.gbellmf(Co.universe, 0.14, 2.5, 0.66)
-Co['MP'] = fuzz.sigmf(Co.universe, 50, 0.8)
+Co['PP'] = sigmf(-50, 0.2)
+Co['Po'] = gbellmf(0.14, 2.5, 0.33)
+Co['Pr'] = gbellmf(0.14, 2.5, 0.66)
+Co['MP'] = sigmf(50, 0.8)
 
 # Resfriado
-Re['PP'] = fuzz.sigmf(Re.universe, -50, 0.2)
-Re['Po'] = fuzz.gbellmf(Re.universe, 0.14, 2.5, 0.33)
-Re['Pr'] = fuzz.gbellmf(Re.universe, 0.14, 2.5, 0.66)
-Re['MP'] = fuzz.sigmf(Re.universe, 50, 0.8)
+Re['PP'] = sigmf(-50, 0.2)
+Re['Po'] = gbellmf(0.14, 2.5, 0.33)
+Re['Pr'] = gbellmf(0.14, 2.5, 0.66)
+Re['MP'] = sigmf(50, 0.8)
 
 # Alergia
-Al['PP'] = fuzz.sigmf(Al.universe, -50, 0.2)
-Al['Po'] = fuzz.gbellmf(Al.universe, 0.14, 2.5, 0.33)
-Al['Pr'] = fuzz.gbellmf(Al.universe, 0.14, 2.5, 0.66)
-Al['MP'] = fuzz.sigmf(Al.universe, 50, 0.8)
+Al['PP'] = sigmf(-50, 0.2)
+Al['Po'] = gbellmf(0.14, 2.5, 0.33)
+Al['Pr'] = gbellmf(0.14, 2.5, 0.66)
+Al['MP'] = sigmf(50, 0.8)
 
 # Influenza
-In['PP'] = fuzz.sigmf(In.universe, -50, 0.2)
-In['Po'] = fuzz.gbellmf(In.universe, 0.14, 2.5, 0.33)
-In['Pr'] = fuzz.gbellmf(In.universe, 0.14, 2.5, 0.66)
-In['MP'] = fuzz.sigmf(In.universe, 50, 0.8)
-
-# TODO: create lambda function to gbell & sigmoid memberships
+In['PP'] = sigmf(-50, 0.2)
+In['Po'] = gbellmf(0.14, 2.5, 0.33)
+In['Pr'] = gbellmf(0.14, 2.5, 0.66)
+In['MP'] = sigmf(50, 0.8)
